@@ -1,2 +1,2 @@
 # Chatbot
-This Git Repo contains information for Ask Peruna chatbot created by Tue Vu - AI/ML Research Scientist at SMU.
+This Git Repo contains source code for Ask Peruna chatbot created by Tue Vu - AI/ML Research Scientist at SMU.
