@@ -12,7 +12,7 @@ def generate_response(qtext):
     return response
 
 st.sidebar.title("Settings")
-llm_name = st.sidebar.selectbox("Model", ["llama3.2-vision:11b","llama3.2-vision:90b"])
+llm_name = st.sidebar.selectbox("Model", ["llama3.2-vision:11b","llama3.2-vision:90b","llava:34b"])
 temperature = st.sidebar.slider("Temperature",0.0,1.0,0.5,0.01)
 st.sidebar.image("./pony.jpeg")
 st.title("Ask Your Image")
