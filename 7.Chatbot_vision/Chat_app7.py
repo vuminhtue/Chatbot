@@ -1,10 +1,5 @@
 from langchain_community.chat_models import ChatOllama
-from langchain.document_loaders import PyPDFLoader
-from langchain.vectorstores import Chroma 
-from langchain.embeddings.ollama import OllamaEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.chains import RetrievalQA
-from langchain_core.prompts import ChatPromptTemplate,SystemMessagePromptTemplate, HumanMessagePromptTemplate, AIMessagePromptTemplate
+from langchain_core.prompts import SystemMessagePromptTemplate
 
 import streamlit as st
 from PIL import Image
@@ -16,20 +11,11 @@ def generate_response(qtext):
     response = qa_chain.run(qtext)
     return response
 
-def split_text(doc):
-    text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size = 1500,
-            chunk_overlap = 150,
-            add_start_index=True
-        )
-    return text_splitter.split_documents(doc)
-
-# Design SideBar including title, information on llm model, temperature and images
 st.sidebar.title("Settings")
 llm_name = st.sidebar.selectbox("Model", ["ingu627/Qwen2.5-VL-7B-Instruct-Q5_K_M:latest"])
 temperature = st.sidebar.slider("Temperature",0.0,1.0,0.5,0.01)
 st.sidebar.image("./pony.jpeg")
-st.title("Ask PDFs")
+st.title("Ask Your Image")
 
 # Design the chatbot
 llm = ChatOllama(base_url="http://localhost:11434", model=llm_name, temperature=temperature)
