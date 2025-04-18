@@ -7,3 +7,4 @@ The repo is underdevelopment with:
 4. Chatbot RAG with uploaded document with memory
 5. Chatbot RAG with built-in database
 6. Chatbot with Youtube using Whisper transcript service
+7. Vision Chatbot
